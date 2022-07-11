@@ -1,0 +1,68 @@
+#modal-schedule {
+  .modal-background {
+    .modal-window {
+      .modal-window-content {
+        .modal-window-header {
+          .schedule_modal {
+            padding: 0 30px;
+            @include sp {
+              width: 100%;
+            }
+            h2 {
+              font-size: 3.6rem;
+              margin-bottom: 3rem;
+              @include sp {
+                font-size: 2.6rem;
+              }
+            }
+            img {
+              width: 100%;
+            }
+            div {
+              display: flex;
+              align-items: center;
+              h3 {
+                font-size: 1.8rem;
+                text-align: left;
+                @include sp {
+                  font-size: 1.4rem;
+                }
+                span {
+                  padding: 0.1rem 2rem;
+                  color: #fff;
+                  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+                }
+              }
+              img {
+                width: 46%;
+              }
+            }
+            p {
+              font-size: 1.6rem;
+              @include sp {
+                line-height: 1.3;
+                font-size: 1.5rem;
+                margin-top: 0.9rem;
+              }
+            }
+            span.schedule_modal_season_spring {
+              background-color: #ffdcdc;
+            }
+            span.schedule_modal_season_summer {
+              background-color: #b6fe96;
+            }
+            span.schedule_modal_season_auturm {
+              background-color: #fecf75;
+            }
+            span.schedule_modal_season_winter {
+              background-color: #c7ebff;
+            }
+            img.wave {
+              margin: 1rem 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.bottomNaviModule {
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  display: none;
+  @include sp {
+    display: block;
+  }
+  ul.bottomLink {
+    display: flex;
+    text-align: center;
+    gap: 0.6rem;
+    li {
+      border-radius: 10px;
+      font-family: "M PLUS 1p", sans-serif;
+      font-size: 2.6rem;
+      text-decoration: none;
+      color: white;
+      cursor: pointer;
+      width: 40vw;
+      padding: 1.2rem 1rem;
+      font-size: 2.4rem;
+      &:first-child {
+        background: colors(orange-sub);
+      }
+      &:last-child {
+        background: #3ad449;
+      }
+    }
+  }
+}

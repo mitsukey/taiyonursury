@@ -1,0 +1,122 @@
+.single-container {
+  display: flex;
+  justify-content: center;
+  padding: 4.8rem 0 12rem;
+  @include sp {
+    margin: 0 1rem;
+    flex-direction: column;
+  }
+
+  .blog-detail {
+    width: 720px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include sp {
+      order: 1;
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 4.8rem;
+    }
+    .blog-detail__wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      width: 100%;
+      border-bottom: 8px dotted colors(orange);
+      margin-bottom: 0.4rem;
+      @include sp {
+        flex-direction: column;
+      }
+      .blog-detail__wrapper__title {
+        font-family: "M PLUS 1p", sans-serif;
+        color: colors(gray);
+        font-size: 3.4rem;
+        margin-bottom: 1.2rem;
+        @include sp {
+          font-size: 1.8rem;
+          align-self: flex-start;
+          width: 100%;
+          text-align: left;
+          margin-bottom: 0.6rem;
+        }
+      }
+      .blog-detail__wrapper__meta {
+        display: flex;
+        flex-direction: column;
+        @include sp {
+          flex-direction: row;
+          width: 100%;
+          margin-bottom: 0.4rem;
+        }
+        span {
+          font-size: 1.8rem;
+          @include sp {
+            align-self: flex-start;
+            margin-top: auto;
+            margin-right: auto;
+            margin-bottom: auto;
+          }
+        }
+        .blog-detail__wrapper__meta__category {
+          background-color: colors(orange);
+          color: #fff;
+          padding: 0.8rem;
+          text-align: center;
+          border-radius: 4px;
+          margin: 0.6rem 0 1rem;
+        }
+      }
+    }
+    .blog-detail__image {
+      margin-top: 1.2rem;
+      width: 720px;
+      height: 480px;
+      @include sp {
+        width: 100%;
+        height: fit-content;
+      }
+      img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+        min-height: 200px;
+      }
+    }
+    .blog-detail__body {
+      padding: 4rem 0;
+      .blog-content {
+        p {
+          $fsz: 1.8rem;
+          font-size: $fsz;
+          line-height: calc(#{$fsz} + 0.4rem);
+          @include sp {
+            @include fontfamily(zenkaku);
+            font-size: $fsz;
+          }
+        }
+      }
+    }
+    .blog-detail__footer {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      font-weight: bold;
+      a {
+        color: colors(gray);
+        display: block;
+        font-size: 1.8rem;
+        padding: 1.2rem;
+        border: 1px solid colors(gray);
+      }
+      #return {
+        background-color: colors(orange);
+        color: #fff;
+        border: none;
+      }
+      div {
+        width: 80px;
+      }
+    }
+  }
+}

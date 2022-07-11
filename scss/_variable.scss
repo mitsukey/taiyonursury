@@ -1,0 +1,40 @@
+$colors: (
+  gray: #5c5c5c,
+  // orange: #ff9d29,
+  orange: #ff9255,
+  orange-sub: #ffba34,
+  limeg: #eef697,
+  lightorange: #FFE5B2,
+);
+
+@function colors($key) {
+  @return map-get($colors, $key);
+}
+
+$pc: 768px;
+$sp: 767px;
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+@mixin pc {
+  @media screen and (min-width: ($pc)) {
+    @content;
+  }
+}
+
+$fontfamiliy: (
+  mplus: "M PLUS 1p",
+  zenmaru: "Zen Maru Gothic",
+  zenkaku: "Zen Kaku Gothic",
+);
+
+@function fontfamily($key) {
+  @return map-get($fontfamiliy, $key);
+}
+
+@mixin fontfamily($key) {
+  // except zenmaru/zenkaku/mplus in $key
+  font-family: fontfamily($key), sans-serif;
+}

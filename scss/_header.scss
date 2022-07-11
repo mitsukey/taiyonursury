@@ -1,0 +1,297 @@
+.menu-main-container {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 1.6rem 3.6rem;
+  display: flex;
+  width: 100%;
+  min-width: 960px;
+  @include sp {
+    display: flex;
+    min-width: auto;
+    padding: 1.6rem 0;
+  }
+  z-index: 100;
+  background: #854a29;
+  transition: none;
+  &.slidein {
+    position: fixed;
+    animation-name: slideIn;
+    animation-duration: 0.25s;
+    animation-iteration-count: 1;
+  }
+  &.slideout {
+    animation-name: slideOut;
+    animation-duration: 0.25s;
+    animation-iteration-count: 1;
+  }
+  a.menu-main-container__logo {
+    @include header-logo-image("assets/logo.png");
+    display: block;
+    width: 300px;
+    height: 50px;
+    margin-right: 5rem;
+    background-size: contain;
+    @include sp {
+      max-width: 300px;
+      width: 70%;
+      margin-left: 1.4rem;
+      margin-right: 0;
+    }
+  }
+  ul {
+    font-size: 2rem;
+    margin: 1.6rem 0;
+    display: flex;
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-weight: bold;
+    @include sp {
+      font-size: 1.6rem;
+      display: none;
+    }
+    li.menu-item {
+      margin-right: 2.4rem;
+      display: flex;
+      align-items: center;
+      &:last-child {
+        margin-right: 0;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+        transition: opacity 0.5s;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+  &.on_firstview {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(3px);
+    transition: 0.25s ease-in-out;
+    ul {
+      li.menu-item {
+        a {
+          color: colors(gray);
+        }
+      }
+    }
+  }
+}
+
+#button-open-mobile-menu {
+  display: none;
+  z-index: 101;
+  background-color: transparent;
+  border: none;
+  color: colors(orange);
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 0 12px;
+  position: absolute;
+  top: 16px;
+  right: 12px;
+  padding: 2px 6px;
+  @include sp {
+    display: block;
+  }
+  svg {
+    .line {
+      fill: none;
+      stroke: colors(orange);
+      stroke-width: 6;
+      transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .line1 {
+      stroke-dasharray: 60 207;
+      stroke-width: 6;
+    }
+    .line2 {
+      stroke-dasharray: 60 60;
+      stroke-width: 6;
+    }
+    .line3 {
+      stroke-dasharray: 60 207;
+      stroke-width: 6;
+    }
+  }
+  &.opened {
+    .line1 {
+      stroke-dasharray: 90 207;
+      stroke-dashoffset: -134;
+      stroke-width: 6;
+    }
+    .line2 {
+      stroke-dasharray: 1 60;
+      stroke-dashoffset: -30;
+      stroke-width: 6;
+    }
+    .line3 {
+      stroke-dasharray: 90 207;
+      stroke-dashoffset: -134;
+      stroke-width: 6;
+    }
+  }
+  &.slidein {
+    position: fixed;
+    animation-name: slideInButton;
+    animation-duration: 0.25s;
+    animation-iteration-count: 1;
+  }
+  &.slideout {
+    animation-name: slideOutButton;
+    animation-duration: 0.25s;
+    animation-iteration-count: 1;
+  }
+}
+
+.mobile-menu {
+  transform: translateX(100%);
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  background-color: #f5ff97;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  @include pc {
+    display: none !important;
+  }
+  &.slidein {
+    transform: translateX(0);
+    animation-name: slideInMobileMenu;
+    animation-duration: 0.25s;
+    animation-iteration-count: 1;
+  }
+  &.slideout {
+    transform: translateX(100%);
+    animation-name: slideOutMobileMenu;
+    animation-duration: 0.25s;
+    animation-iteration-count: 1;
+  }
+  @include sp {
+    ul#menu-main-1 {
+      font-family: "Zen Maru Gothic", sans-serif;
+      color: colors(gray);
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding-top: 8.4rem;
+      width: 70vw;
+      background-color: #f5ff97;
+      font-size: 2.4rem;
+      gap: 2rem;
+      li {
+        border-bottom: 1px solid colors(gray);
+        padding-bottom: 2.1rem;
+        width: 192px;
+        text-align: center;
+      }
+    }
+  }
+  .footer-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 24px;
+    flex-direction: column;
+    .footer-button {
+      margin-top: 1.2rem !important;
+      border: none;
+      padding: 0.5rem 1.2rem;
+      width: 210px;
+      height: 54px;
+      font-size: 2.1rem;
+      color: #ffffff;
+      background-color: colors(orange-sub);
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        margin-right: 1rem;
+      }
+      &:first-child {
+        img {
+          width: 42px;
+        }
+      }
+      &:last-child {
+        img {
+          width: 38px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes slideInMobileMenu {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutMobileMenu {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    top: -88px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    position: fixed;
+    top: 0px;
+  }
+  99% {
+    position: fixed;
+    top: -88px;
+  }
+  100% {
+    top: 0px;
+    position: absolute;
+  }
+}
+
+@keyframes slideInButton {
+  0% {
+    top: -72px;
+  }
+  100% {
+    top: 16px;
+  }
+}
+
+@keyframes slideOutButton {
+  0% {
+    position: fixed;
+    top: 16px;
+  }
+  99% {
+    position: fixed;
+    top: -72px;
+  }
+  100% {
+    top: 0px;
+    position: absolute;
+  }
+}

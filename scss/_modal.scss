@@ -1,0 +1,152 @@
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-background {
+  display: none;
+  animation: fadein 0.5s;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  .modal-window {
+    position: fixed;
+    z-index: 12;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1 4px rgba(0, 0, 0, 0.25);
+    padding: 24px 0;
+    @include sp {
+      padding: 16px;
+    }
+    .modal-window-close {
+      background-color: transparent;
+      border: none;
+      position: absolute;
+      top: 1.6rem;
+      right: 1.6rem;
+      @include sp {
+        top: 0.8rem;
+      }
+      span {
+        i {
+          font-size: 4.2rem;
+          color: #666;
+        }
+      }
+    }
+    .modal-window-content {
+      .modal-window-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 16px;
+        h3 {
+          font-family: "M PLUS 1p", sans-serif;
+          font-weight: 500;
+          font-size: 2.6rem;
+          margin-bottom: 2rem;
+          @include sp {
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+          }
+        }
+        form {
+          width: 60%;
+          display: flex;
+          flex-direction: column;
+          @include sp {
+            width: 80%;
+          }
+          button {
+            margin-top: 0;
+            @include sp {
+              font-size: 2rem;
+              padding: 1rem 0;
+            }
+          }
+          label {
+            position: relative;
+            color: #5c5c5c;
+            font-size: 1.6rem;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0.8rem;
+            @include sp {
+              font-size: 1.5rem;
+              margin-bottom: 0;
+            }
+            input,
+            textarea {
+              font-family: "M PLUS 1p", sans-serif;
+              transform: rotate(0.2deg);
+              resize: none;
+              position: relative;
+              padding: 0.6rem 1rem 0.6rem 4rem !important;
+              border: 1px solid #cfcfcf;
+              border-radius: 4px;
+              outline: none;
+              font-size: 1.6rem;
+              color: #5c5c5c;
+              margin: 0.8rem 0;
+              padding: 0.4rem;
+              @include sp {
+                font-size: 1.5rem;
+                padding: 0.6rem 1rem 0.6rem 3.8rem !important;
+              }
+            }
+            figure {
+              width: 33px;
+              height: 39px;
+              position: absolute;
+              top: 2.3rem;
+              left: 0rem;
+              background-color: #eee;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              @include sp {
+                width: 30px;
+                height: 36px;
+                top: 2.3rem;
+              }
+              i {
+                font-size: 1.6rem;
+                transition: 0.3s;
+                color: #636a70;
+                @include sp {
+                  font-size: 1.5rem;
+                }
+              }
+            }
+            figure.fig-message {
+              height: 262px;
+              align-items: flex-start;
+              // @include sp {
+              //   height: 166px;
+              // }
+              i {
+                transform: translateY(12px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

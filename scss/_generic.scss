@@ -1,0 +1,122 @@
+html {
+  font-size: 62.5%;
+  // scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-width: 960px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @include fontfamily(mplus);
+  @include sp {
+    min-width: auto;
+  }
+  &.overflowHidden {
+    overflow-y: hidden;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+li,
+dt,
+dd,
+th,
+td,
+figcaption,
+span {
+    transform: rotate(0.2deg);
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: rgb(255, 157, 41);
+  text-align: center;
+}
+
+h2 {
+  @include fontfamily(zenmaru);
+  font-size: 4.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+h3 {
+  color: colors(gray);
+  @include fontfamily(zenmaru);
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+p {
+  color: colors(gray);
+  font-size: 1.6rem;
+  @include fontfamily(zenkaku);
+}
+
+button {
+  cursor: pointer;
+}
+
+.button-orange {
+  border: none;
+  display: flex;
+  justify-content: center;
+  background-color: colors(orange);
+  color: #ffffff;
+  border-radius: 10px;
+  width: 24rem;
+  font-family: "M PLUS 1p", sans-serif;
+  font-weight: 500;
+  align-items: center;
+  margin: 3.6rem auto 0;
+  padding: 1.2rem 0;
+  font-size: 2.4rem;
+}
+
+.bg-orange {
+  background-color: rgb(255, 146, 85);
+  color: rgb(255, 255, 255);
+}
+
+// フロントページ以外で使うトップ画像用クラス
+.page-banner {
+  width: 100%;
+  height: 460px;
+  z-index: 1;
+}
+
+.marker {
+  background: linear-gradient(transparent 60%, #ffe49e 60%);
+}
+
+.frame {
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  width: 100%;
+  height: 240px;
+  pointer-events: none;
+  background-image: url(assets/frame.png);
+  background-size: 1920px 240px;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 2;
+}

@@ -1,0 +1,30 @@
+@mixin page_banner-image($image_url) {
+  .image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url($image_url);
+  }
+}
+
+@mixin page_banner-image_gradient($image_url) {
+  .image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(transparent 0% 80%, white 90%),
+      url($image_url);
+  }
+}
+
+@mixin header-logo-image($image_url) {
+  content: "";
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url($image_url);
+  background-size: contain;
+}
